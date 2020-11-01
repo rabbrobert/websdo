@@ -1,0 +1,14 @@
+<?xml version="1.0" ?> 
+<project name="webservices-hello_world" default="deployWar"> 
+<target name="deployWar">
+     <wldeploy action="deploy" verbose="false" debug="true"
+          name="websdo_geo"
+          source="dist/websdo_geo.war"
+          upload="true" adminurl="t3://192.168.0.130:7001"
+          user="weblogic"
+          password="Alexa111"
+          usenonexclusivelock="true"
+          targets="M1"/>
+</target>
+</project>
+

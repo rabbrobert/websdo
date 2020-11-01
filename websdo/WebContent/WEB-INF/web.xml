@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <servlet>
+    <servlet-name>geo</servlet-name>
+    <servlet-class>com.rr.geo</servlet-class> 
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>geo</servlet-name>
+    <url-pattern>/webdso_geo/geo</url-pattern>
+  </servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>mpid</servlet-name>
+    <servlet-class>com.rr.mpid</servlet-class> 
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>mpid</servlet-name>
+    <url-pattern>/webdso_geo/mpid</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>inter</servlet-name>
+    <servlet-class>com.rr.inter</servlet-class> 
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>mpid</servlet-name>
+    <url-pattern>/webdso_geo/inter</url-pattern>
+  </servlet-mapping>
+
+
+
+</web-app>    

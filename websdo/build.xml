@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<project name="websdo_geo" default="war">
+
+    <property name="src.dir" location="src" />
+    <property name="build.dir" location="build" />
+    <property name="dist.dir" location="dist" />
+    <property name="build.classes" location="build/classes" />
+    <property name="docs.dir" location="docs" />
+    <property name="web.dir" location="WebContent" />
+    <property name="tomcat" location="/opt/tomcat" />
+    <property name="tomcat.deployment" location="${tomcat}/webapps" />
+    <property name="tomcat.bin" location="${tomcat}/bin" />
+
+
+
+    <path id="compile.classpath">
+        <!--fileset dir="WebContent/WEB-INF/lib" includes="**/*.jar">
+            <include name="*.jar"/>
+        </fileset-->
+        <!--fileset dir="/opt/tomcat/webapps/restmav-0.0.1-SNAPSHOT/WEB-INF/lib" >
+            <include name="*.jar"/>
+        </fileset-->
+        <pathelement location="WebContent/WEB-INF/lib/org.json.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/json-20190722.jar"/>
+        <!--pathelement location="WebContent/WEB-INF/lib/javax.servlet.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/hibernate.jar"/>
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-3.0alpha.jar"/-->
+
+
+        <pathelement location="WebContent/WEB-INF/lib/com.springsource.oracle.spatial.geometry-10.2.0.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/ojdbc8.jar"/>
+
+        <pathelement location="WebContent/WEB-INF/lib/svenson-1.4.0.jar"/>
+
+	<!--pathelement location="WebContent/WEB-INF/lib/dom4j-2.1.1.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
+
+        <!--pathelement location="WebContent/WEB-INF/lib/spring-jcl-5.2.0.RELEASE.jar"/-->
+
+        <!--pathelement location="WebContent/WEB-INF/lib/commons-collections-3.2.1-1.0.0.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/commons-collections-3.2.jar"/>
+	      <!--pathelement location="WebContent/WEB-INF/lib/commons-collections-3.1.jar"/-->
+
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-core-5.1.17.Final.jar"/-->
+
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-core-3.5.2-Final.jar"/-->
+      	<pathelement location="WebContent/WEB-INF/lib/hibernate-core-5.4.6.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-core-5.3.6.Final.jar"/>
+
+        <pathelement location="WebContent/WEB-INF/lib/hibernate.jar"/>
+
+      	<pathelement location="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
+      	<pathelement location="WebContent/WEB-INF/lib/jta-1.1.jar"/>
+
+      	<pathelement location="WebContent/WEB-INF/lib/slf4j-api-2.0.0-alpha1.jar"/>
+      	<pathelement location="WebContent/WEB-INF/lib/slf4j.jar"/>
+      	<pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.7.21.jar"/>
+      	<pathelement location="WebContent/WEB-INF/lib/slf4j-log4j12-1.7.5.jar"/>
+      	<pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.6.2-sources.jar"/>
+
+
+      	<pathelement location="WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
+
+
+      	<pathelement location="WebContent/WEB-INF/lib/xml-apis-1.0.b2.jar"/>
+
+      	<!--pathelement location="WebContent/WEB-INF/lib/javax.persistence-api-2.1.jar"/-->
+      	<pathelement location="WebContent/WEB-INF/lib/javax.persistence-api-2.2.jar"/>
+
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-commons-annotations-3.2.0.Final.jarr"/-->
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar"/>
+
+        <pathelement location="WebContent/WEB-INF/lib/org-apache-commons-logging.jar"/>
+
+        <!--pathelement location="WebContent/WEB-INF/lib/jboss-logging-3.4.1.Final.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/jboss-logging-3.3.2.Final.jar"/>
+
+        <pathelement location="WebContent/WEB-INF/lib/javax.transaction.jar"/>
+
+        <!--pathelement location="WebContent/WEB-INF/lib/byte-buddy-1.9.11.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/byte-buddy-1.8.12.jar"/>
+        <!--pathelement location="WebContent/WEB-INF/lib/byte-buddy-1.5.7.jar"/-->
+        <!--pathelement location="WebContent/WEB-INF/lib/byte-buddy-1.8.17.jar"/-->
+
+
+        <pathelement location="WebContent/WEB-INF/lib/asm-5.0.3.jar"/>
+
+        <!--pathelement location="WebContent/WEB-INF/lib/classmate-1.3.1.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/classmate-1.3.4.jar"/>
+
+
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-jpamodelgen-5.3.1.Final.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-jpamodelgen-5.3.6.Final.jar"/>
+
+        <pathelement location="WebContent/WEB-INF/lib/javassist-3.23.1-GA.jar"/>
+
+
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-entitymanager-5.2.12.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-spatial-5.3.6.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-c3p0-5.3.6.Final.jar"/>
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-osgi-5.3.1.Final.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-osgi-5.3.6.Final.jar"/>
+        <!--pathelement location="WebContent/WEB-INF/lib/hibernate-proxool-5.3.1.Final.jar"/-->
+        <pathelement location="WebContent/WEB-INF/lib/hibernate-proxool-5.3.6.Final.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tomcat-servlet-api-8.0.51.jar"/>
+
+
+        <!--pathelement location="WebContent/WEB-INF/lib/servlet-api.jar"/-->
+	       <!--path refid="Apache Tomcat v8.0"/>
+	       <path refid="hibernatetuto1.classpath"/-->
+    </path>
+
+    <path id="compile.classpath_2">
+     	   <!--path refid="Apache Tomcat v8.0"/-->
+	       <!--path refid="hibernatetuto1.classpath"/-->
+         <path refid="compile.classpath"/>
+         <!--path refid="hibernatetuto1.classpath"/-->
+
+    </path>
+
+
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <mkdir dir="dist" />
+    </target>
+
+    <target name="compile" depends="init" >
+        <property name="compile.debug" value="true" />
+	      <property name="compile.deprecation" value="true" />
+	      <property name="compile.optimize" value="true" />
+	      <property name="compile.nowarn" value="false" />
+        <javac destdir="build/classes" debug="true" srcdir="src"
+      			nowarn="${compile.nowarn}"
+      			deprecation="${compile.deprecation}"
+      			includeantruntime="false"
+      			optimize="${compile.optimize}" >
+                  <!--classpath refid="compile.classpath"/-->
+            <classpath refid="compile.classpath_2"/>
+            <compilerarg value="-Xlint:unchecked" />
+        </javac>
+        <copy file="src/Hibernate.cfg.xml" todir="build/classes" />
+        <copy file="src/t1.hbm.xml" todir="build/classes" />
+        <copy file="src/persistence.xml" todir="build/classes" />
+      	<copy   todir="build/classes/META-INF" >
+      		<fileset dir="${src.dir}/resources/META-INF" includes="*.xml" />
+      	</copy>
+    </target>
+
+
+    <target name="war" depends="compile" >
+        <war destfile="dist/websdo_geo.war" webxml="WebContent/WEB-INF/web.xml">
+            <fileset dir="WebContent"/>
+            <!--lib dir="WebContent/WEB-INF/lib"/-->
+            <classes dir="build/classes"/>
+        </war>
+        <antcall target="deployWar">
+	</antcall>
+    </target>
+
+    <target name="deployWar">
+       <copy file="dist/websdo_geo.war" todir="${tomcat.deployment}" />
+    </target>
+
+    <target name="clean">
+        <delete dir="dist" />
+        <delete dir="build" />
+    </target>
+
+</project>

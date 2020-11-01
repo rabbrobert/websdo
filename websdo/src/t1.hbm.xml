@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://localhost/hibernate-mapping-3.0.dtd"-->
+
+
+<hibernate-mapping>
+<class name="hibernatetuto1.t1" table="TEST_LDR">
+
+<id name="mp_id"  column="MP_ID"  type="integer" >
+ <generator class="assigned" ></generator>
+</id> 
+<!--property  name="mp_db_id" column="MP_DB_ID" type="integer" --><!--/property-->
+<!--property  name="name" column="NAME" type="string" ></property -->
+
+<!--property  name="shape" column="SHAPE" type="oracle.spatial.geometry.JGeometry"-->
+<!--/property-->
+
+<property  name="X" column="X" type="integer"></property>
+<property  name="Y" column="Y" type="integer"></property>
+<property  name="Z" column="Z" type="integer"></property>
+<property  name="mp_id" column="mp_id" type="integer"></property>
+</class>
+</hibernate-mapping>
